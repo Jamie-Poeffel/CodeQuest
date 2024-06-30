@@ -1,6 +1,6 @@
 ﻿namespace CodeQuest
 {
-  partial class Form1
+  partial class App
   {
     /// <summary>
     /// Erforderliche Designervariable.
@@ -31,7 +31,7 @@
       this.components = new System.ComponentModel.Container();
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(800, 450);
-      this.Text = "Form1";
+      this.Text = "CodeQuest";
     }
 
     #endregion
