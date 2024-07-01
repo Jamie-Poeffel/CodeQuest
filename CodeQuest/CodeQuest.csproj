@@ -77,6 +77,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\code-slash-outline.png" />
+    <Content Include="Resources\code-slash_1.png" />
+    <Content Include="Resources\home-outline_1.png" />
+    <Content Include="Resources\home_1.png" />
     <Content Include="Resources\settings-outline.png" />
     <Content Include="Resources\settings.png" />
   </ItemGroup>
