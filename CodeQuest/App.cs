@@ -14,7 +14,7 @@ namespace CodeQuest
   public partial class App : Form
   {
     PictureBox[] BoxList;
-    private bool s = false;
+    public static bool s = false;
     private bool b = true;
     public App()
     {
@@ -22,7 +22,7 @@ namespace CodeQuest
       InitializeComponent();
       init();
     }
-
+    [STAThread]
     private void init()
     {
       BoxList[0] = new PictureBox();
@@ -58,7 +58,7 @@ namespace CodeQuest
       this.Controls.Add(BoxList[2]);
 
     }
-
+    [STAThread]
     private void IconClick(object sender, EventArgs e)
     {
       PictureBox box = sender as PictureBox;
@@ -112,7 +112,7 @@ namespace CodeQuest
       }
 
     }
-
+    [STAThread]
     private Image Setfile(char v, PictureBox item)
     {
       if (v == 'o')
@@ -133,7 +133,7 @@ namespace CodeQuest
         }
 
     }
-
+    [MTAThread]
     protected override void OnSizeChanged(EventArgs e)
     {
       base.OnSizeChanged(e);
