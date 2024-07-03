@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CodeQuest
@@ -14,10 +8,12 @@ namespace CodeQuest
   public partial class App : Form
   {
     PictureBox[] BoxList;
-    public static bool s = false;
+    private static bool s = false;
     private bool b = true;
+    private IConfiguration __CONFIGURATION__ = null;
     public App()
     {
+      __CONFIGURATION__ = config;
       BoxList = new PictureBox[3];
       InitializeComponent();
       init();
@@ -46,13 +42,13 @@ namespace CodeQuest
       BoxList[2] = new PictureBox();
       BoxList[2].Name = "box3";
       BoxList[2].BorderStyle = BorderStyle.None;
-      BoxList[2].Image = Image.FromFile(@"..\..\Resources\code-slash-outline.png");
+      BoxList[2].Image = Image.FromFile(@"..\..\Resources\code-slash_1.png");
       BoxList[2].SizeMode = PictureBoxSizeMode.Zoom;
       BoxList[2].Size = new Size(35, 35);
       BoxList[2].Location = new Point(this.Width - BoxList[2].Width - 30, this.Height - this.Height + BoxList[2].Height);
       BoxList[2].Click += new EventHandler(IconClick);
 
-
+      
       this.Controls.Add(BoxList[0]);
       this.Controls.Add(BoxList[1]);
       this.Controls.Add(BoxList[2]);
@@ -139,9 +135,9 @@ namespace CodeQuest
       base.OnSizeChanged(e);
       if (s == true)
       {
-        BoxList[0].Location = new Point(this.Width - BoxList[0].Width - 30, this.Height - this.Height + BoxList[0].Height + 50);
-        BoxList[1].Location = new Point(this.Width - BoxList[1].Width - 30, this.Height - this.Height + BoxList[1].Height + 50);
-        BoxList[2].Location = new Point(this.Width - BoxList[2].Width - 30, this.Height - this.Height + BoxList[2].Height + 25);
+        BoxList[0].Location = new Point(this.Width - BoxList[0].Width - 30, this.Height - this.Height + BoxList[0].Height + 80);
+        BoxList[1].Location = new Point(this.Width - BoxList[1].Width - 30, this.Height - this.Height + BoxList[1].Height + 40);
+        BoxList[2].Location = new Point(this.Width - BoxList[2].Width - 30, this.Height - this.Height + BoxList[2].Height);
       }
       s = true;
     }

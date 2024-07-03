@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,5 +21,6 @@ namespace CodeQuest
       Application.SetCompatibleTextRenderingDefault(false);
       Application.Run(new App());
     }
+
   }
 }
